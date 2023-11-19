@@ -1,5 +1,7 @@
 package org.example.vetoresEArrays;
 
+import java.util.Arrays;
+
 public class Vetor {
     private String[] elementos;
     private int tamanho;
@@ -32,5 +34,24 @@ public class Vetor {
         } else {
             throw new Exception("Vetor cheio");
         }
+    }
+    public int tamanho() {
+        return this.tamanho;
+    }
+    //imprimir somente os vetores que estão preenchidos
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("[");
+        for(int i = 0; i<this.tamanho-1; i++) {
+            s.append(this.elementos[i]);
+            s.append(", ");
+        }
+        if(this.tamanho>0) {
+            s.append(this.elementos[this.tamanho-1]);
+        }
+        s.append("]");
+        return s.toString();
+
     }
 }
