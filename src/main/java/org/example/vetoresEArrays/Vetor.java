@@ -52,6 +52,15 @@ public class Vetor {
         }
         s.append("]");
         return s.toString();
-
+    }
+    public String busca(int posicao) {
+        //posicoes que existem dentro deste vetor que tem elementos
+        //a posicao precisa ser >= a 0 ja q indice comeca no 0
+        //posi tb tem que ser menor que o tamanho
+        //se negar td a expressao tem o range de tds posi que n podem ser acessadas
+        if(!(posicao >= 0 && posicao < tamanho)) {
+            throw new IllegalArgumentException("Posição inválida");
+        }
+        return this.elementos[posicao];
     }
 }
