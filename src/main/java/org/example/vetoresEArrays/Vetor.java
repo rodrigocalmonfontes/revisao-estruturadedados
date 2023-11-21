@@ -63,4 +63,13 @@ public class Vetor {
         }
         return this.elementos[posicao];
     }
+    //como str é um obj nao pode usar ==
+    public int busca(String elemento) {
+        for(int i=0; i<this.tamanho; i++){
+            if(this.elementos[i].equalsIgnoreCase(elemento)){
+                return i;
+            }
+        }
+        return -1; //-1 é posi q n existe dentro do vetor
+    }
 }
