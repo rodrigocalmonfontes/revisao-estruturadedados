@@ -72,4 +72,24 @@ public class Vetor {
         }
         return -1; //-1 é posi q n existe dentro do vetor
     }
+//     e se tentar colocar na posi 4 colocar na posi 3 que é onde ta o f
+//            pode mover o g pra posi 5, mover o f pra posi 4, e pode atribuir o a pro f que é a posi 3
+//    ai insere o valor e nao perde nada no vetor
+//            concluindo essa logica tem q mover os elementos pra posi seguinte pra fazer
+//    espaco no vetor
+    //
+   public boolean adiciona(int posicao, String elemento) {
+       if(!(posicao >= 0 && posicao < tamanho)) {
+           throw new IllegalArgumentException("Posição inválida");
+       }
+       //p mover os elementos usar for para iterar o vetor
+       // 0 1 2 3 4 5 6 = tamanho 5
+       // B C E F G + +
+       for(int i = this.tamanho-1; i >= posicao; i--) {
+           this.elementos[i+1] = this.elementos[i];
+       }
+       this.elementos[posicao] = elemento;
+       this.tamanho++;
+       return false;
+   }
 }
