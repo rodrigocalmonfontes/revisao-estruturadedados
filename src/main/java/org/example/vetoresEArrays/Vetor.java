@@ -78,7 +78,7 @@ public class Vetor {
 //            concluindo essa logica tem q mover os elementos pra posi seguinte pra fazer
 //    espaco no vetor
     //
-   public boolean adiciona(int posicao, String elemento) {
+   public void adiciona(int posicao, String elemento) {
        if(!(posicao >= 0 && posicao < tamanho)) {
            throw new IllegalArgumentException("Posição inválida");
        }
@@ -90,6 +90,5 @@ public class Vetor {
        }
        this.elementos[posicao] = elemento;
        this.tamanho++;
-       return false;
    }
 }
