@@ -28,6 +28,7 @@ public class Vetor {
     }
  */
     public void adiciona(String elemento) throws Exception {
+        this.aumentaCapacidade();
         if(this.tamanho < this.elementos.length) { //se o tamanhhio é menor que a capacidade do vetor de elementos
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
@@ -82,6 +83,7 @@ public class Vetor {
        if(!(posicao >= 0 && posicao < tamanho)) {
            throw new IllegalArgumentException("Posição inválida");
        }
+       this.aumentaCapacidade();
        //p mover os elementos usar for para iterar o vetor
        // 0 1 2 3 4 5 6 = tamanho 5
        // B C E F G + +
@@ -91,4 +93,16 @@ public class Vetor {
        this.elementos[posicao] = elemento;
        this.tamanho++;
    }
+   //metodo pra add capacidade no vetor
+    private void aumentaCapacidade() {
+        if(this.tamanho == this.elementos.length) {
+            //se tamanho é igual a capacidade do vetor que tem
+            String[] elementosNovos = new String[this.elementos.length * 2];
+            for(int i = 0; i < this.elementos.length; i++) {
+                //atrb posi 0 do elementos novos a posi 0 do nosso vetor
+                elementosNovos[i] = this.elementos[i];
+            }
+            this.elementos = elementosNovos; //atr novo vetor ao vetor que estamos trab dentro desta classe
+        }
+    }
 }

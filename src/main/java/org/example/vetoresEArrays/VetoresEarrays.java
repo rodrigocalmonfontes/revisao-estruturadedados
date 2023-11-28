@@ -19,5 +19,7 @@ public class VetoresEarrays {
         vetor.adiciona(3, "D");
         System.out.println(vetor);
 
+        
+
     }
 }
